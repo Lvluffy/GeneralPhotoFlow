@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">通用图片查看</string>
+
+    <string name="viewpager_indicator">%1$d/%2$d</string>
+
+    <string name="cancel">取消</string>
+    <string name="settings">设置</string>
+
+    <string name="save_big_image">保存图片</string>
+    <string name="saved_faild">保存失败</string>
+    <string name="save_image_aready">已保存->图库查看,图片地址: \n %s</string>
+
+    <!-- android 6.0权限-->
+    <string name="permission_tip_camera">缺少(相机)权限，无法使用该功能，点击"设置"去开启此权限\n您可在“设置”>“应用”>“权限”中配置权限</string>
+    <string name="permission_tip_audio">缺少(麦克风)权限，无法使用该功能，点击"设置"去开启此权限\n您可在“设置”>“应用”>“权限”中配置权限</string>
+    <string name="permission_tip_video">缺少(麦克风或相机)权限，无法使用该功能，点击"设置"去开启此权限\n您可在“设置”>“应用”>“权限”中配置权限</string>
+    <string name="permission_tip_location">缺少(读取位置信息)权限，无法使用该功能，点击"设置"去开启此权限\n您可在“设置”>“应用”>“权限”中配置权限</string>
+    <string name="permission_tip_SD_IMEI">本App需要使用(存储)和(读取本机识别码)权限，您是否同意?点击"设置"去开启此权限\n您可在“设置”>“应用”>“权限”中配置权限</string>
+    <string name="permission_tip_SD">本App需要使用(存储)权限，您是否同意?点击"设置"去开启此权限\n您可在“设置”>“应用”>“权限”中配置权限</string>
+
+</resources>

@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.luffy.generalphotoflowlib">
+
+    <!--权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!--界面-->
+    <application>
+        <!--图片预览-->
+        <activity android:name=".photoPreview.ui.ImagePreviewActivity" />
+        <!--图片浏览-->
+        <activity
+            android:name=".photoBrowse.ui.PhotoPagerActivity"
+            android:theme="@style/PhoAppTheme.Transparent" />
+    </application>
+
+</manifest>
+

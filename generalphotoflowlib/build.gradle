@@ -1,0 +1,67 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.Lvluffy'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    /**默认-选项配置*/
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+    /**构建类型-配置*/
+    buildTypes {
+        debug {
+            //混淆
+            minifyEnabled false
+            //混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            //混淆
+            minifyEnabled false
+            //混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    /**构建时关闭错误或者警告提示 */
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    /**自定义aar的名字*/
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = outputFileName.replace(".aar", "-") + rootProject.ext.versionCode + ".aar"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    /**support-v4*/
+    compile "com.android.support:support-v4:$rootProject.supportVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportVersion"
+
+    /** 第三方库*/
+    /*glide(图片加载库)*/
+    provided 'com.github.bumptech.glide:glide:4.5.0'
+    compile "com.facebook.fresco:fresco:$rootProject.frescoVersion"
+    // 支持 GIF 动图，需要添加
+    compile "com.facebook.fresco:animated-gif:$rootProject.frescoVersion"
+    // 支持 WebP （静态图+动图），需要添加
+    compile "com.facebook.fresco:animated-webp:$rootProject.frescoVersion"
+    compile "com.facebook.fresco:webpsupport:$rootProject.frescoVersion"
+    //跟随viewpager的点
+    compile 'me.relex:circleindicator:1.1.8@aar'
+    //上滑控制面板,项目中的potopick中有使用案例
+    compile 'com.sothree.slidinguppanel:library:3.3.0'
+    //android6.0权限工具类
+    compile 'com.lovedise:permissiongen:0.1.1'
+    //加载超长图必备库
+    compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.9.0'
+}
