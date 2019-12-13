@@ -155,8 +155,8 @@ public class PhotoPagerActivity extends FrescoBaseActivity implements ViewPager.
         final View content = LayoutInflater.from(this).inflate(R.layout.activity_photo_pager, rootLayout);
         setContentView(rootLayout);
 
-        indicator = (CircleIndicator) content.findViewById(R.id.indicator);
-        viewPager = (ViewPager) content.findViewById(R.id.pager);
+        indicator = content.findViewById(R.id.indicator);
+        viewPager = content.findViewById(R.id.pager);
         viewPager.setAdapter(new SamplePagerAdapter());
         setIndicatorVisibility(true);
         if (savedInstanceState != null) {
@@ -186,7 +186,7 @@ public class PhotoPagerActivity extends FrescoBaseActivity implements ViewPager.
         setCustomView(-1);//设置用户自定义的view
 
         //类似微信图片下拉关闭
-        scalePhotoView = (ScalePhotoView) content.findViewById(R.id.scalePhotoView);
+        scalePhotoView = content.findViewById(R.id.scalePhotoView);
         scalePhotoView.setOpenDownAnimate(photoPagerBean.isOpenDownAnimate());
         if (photoPagerBean.isOpenDownAnimate()) {
             scalePhotoView.setOnViewTouchListener(new ScalePhotoView.onViewTouchListener() {

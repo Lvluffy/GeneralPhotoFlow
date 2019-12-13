@@ -57,7 +57,7 @@ public class ImagePreviewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_image_detail, container, false);
-        mImageView = (ImageView) rootView.findViewById(R.id.image);
+        mImageView = rootView.findViewById(R.id.image);
         mAttacher = new PhotoViewAttacher(mImageView);
         mAttacher.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

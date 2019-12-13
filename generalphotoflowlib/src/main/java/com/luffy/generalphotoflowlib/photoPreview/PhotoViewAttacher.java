@@ -114,7 +114,7 @@ public class PhotoViewAttacher implements IPhotoView,
     private float mLastRotation = 0;
 
     public PhotoViewAttacher(ImageView imageView) {
-        mImageView = new WeakReference<ImageView>(imageView);
+        mImageView = new WeakReference<>(imageView);
 
         imageView.setDrawingCacheEnabled(true);
         imageView.setOnTouchListener(this);
@@ -687,15 +687,15 @@ public class PhotoViewAttacher implements IPhotoView,
         return imageView.getHeight() - imageView.getPaddingTop() - imageView.getPaddingBottom();
     }
 
-    public static interface OnMatrixChangedListener {
+    public interface OnMatrixChangedListener {
         void onMatrixChanged(RectF rect);
     }
 
-    public static interface OnPhotoTapListener {
+    public interface OnPhotoTapListener {
         void onPhotoTap(View view, float x, float y);
     }
 
-    public static interface OnViewTapListener {
+    public interface OnViewTapListener {
         void onViewTap(View view, float x, float y);
     }
 

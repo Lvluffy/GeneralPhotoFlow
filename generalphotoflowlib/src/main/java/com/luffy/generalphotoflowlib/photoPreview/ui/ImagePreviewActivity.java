@@ -46,10 +46,10 @@ public class ImagePreviewActivity extends FragmentActivity {
         setContentView(R.layout.activity_image_detail_pager);
 
         //初始化控件
-        mPager = (PhotoPreviewViewPager) findViewById(R.id.pager);
+        mPager = findViewById(R.id.pager);
         layoutNav = findViewById(R.id.layout_nav);
-        imgBack = (ImageView) findViewById(R.id.img_back);
-        txtTitle = (TextView) findViewById(R.id.txt_title);
+        imgBack = findViewById(R.id.img_back);
+        txtTitle = findViewById(R.id.txt_title);
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +107,7 @@ public class ImagePreviewActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            String url = fileList.get(position).toString();
+            String url = fileList.get(position);
             return ImagePreviewFragment.newInstance(url);
         }
     }

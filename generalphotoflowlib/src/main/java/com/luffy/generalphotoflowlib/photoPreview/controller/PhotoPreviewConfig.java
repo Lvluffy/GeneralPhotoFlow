@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.DrawableRes;
 
-import com.luffy.generalphotoflowlib.photoPreview.utils.ImageDownloadUtil;
 import com.luffy.generalphotoflowlib.photoPreview.ui.ImagePreviewActivity;
 import com.luffy.generalphotoflowlib.photoPreview.ui.ImagePreviewFragment;
+import com.luffy.generalphotoflowlib.photoPreview.utils.ImageDownloadUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;

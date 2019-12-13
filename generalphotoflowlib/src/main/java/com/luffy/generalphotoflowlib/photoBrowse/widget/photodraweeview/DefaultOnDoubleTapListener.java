@@ -72,7 +72,7 @@ public class DefaultOnDoubleTapListener implements GestureDetector.OnDoubleTapLi
             } else {
                 mAttacher.setScale(mAttacher.getMinimumScale(), x, y, true);
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         return true;
     }

@@ -85,8 +85,7 @@ public class ImagePipelineConfigFactory {
      * 设置网络请求监听
      */
     private static Set<RequestListener> getRequestListeners() {
-        Set<RequestListener> requestListeners = new HashSet<>();
-        return requestListeners;
+        return new HashSet<>();
     }
 
     /**

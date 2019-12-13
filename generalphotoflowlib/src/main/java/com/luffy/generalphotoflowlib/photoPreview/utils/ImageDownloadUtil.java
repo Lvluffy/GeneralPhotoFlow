@@ -25,22 +25,8 @@ public class ImageDownloadUtil {
     public static String path = "imagepreview";//下载路径
     private static final int DOWNLOAD_SUCCESS = 0X11;
     private static final int DOWNLOAD_FAILD = 0X12;
-    private static Context mContext;
-
-    private static Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if (msg.what == DOWNLOAD_SUCCESS) {
-                Toast.makeText(mContext, (String) msg.obj, Toast.LENGTH_SHORT).show();
-            } else if (msg.what == DOWNLOAD_FAILD) {
-                Toast.makeText(mContext, "保存失败", Toast.LENGTH_SHORT).show();
-            }
-        }
-    };
 
     public static void saveImage(final Context context, String url, final Bitmap bitmap) {
-        mContext = context;
         //保存路径
         String imgDir = "";
         if (checkSDCard()) {
@@ -62,6 +48,7 @@ public class ImageDownloadUtil {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                MyHandler mHandler = new MyHandler(context);
                 try {
                     FileOutputStream fos = new FileOutputStream(imageFile);
                     boolean compress = bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
@@ -95,5 +82,24 @@ public class ImageDownloadUtil {
 
     private static boolean checkSDCard() {
         return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+    }
+
+    private static class MyHandler extends Handler {
+
+        private Context context;
+
+        public MyHandler(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == DOWNLOAD_SUCCESS) {
+                Toast.makeText(context, (String) msg.obj, Toast.LENGTH_SHORT).show();
+            } else if (msg.what == DOWNLOAD_FAILD) {
+                Toast.makeText(context, "保存失败", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
