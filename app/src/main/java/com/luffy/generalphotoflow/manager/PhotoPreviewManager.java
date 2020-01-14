@@ -13,10 +13,11 @@ public class PhotoPreviewManager {
     public static ArrayList<String> getPhotoUrls() {
         ArrayList<String> list = new ArrayList<>();
         //网络图片
-        list.add("https://ws1.sinaimg.cn/large/610dc034ly1fgepc1lpvfj20u011i0wv.jpg");
-        list.add("https://ws1.sinaimg.cn/large/610dc034ly1fgdmpxi7erj20qy0qyjtr.jpg");
-        list.add("https://ws1.sinaimg.cn/large/610dc034ly1fgchgnfn7dj20u00uvgnj.jpg");
-        list.add("https://ws1.sinaimg.cn/large/610dc034ly1fgbbp94y9zj20u011idkf.jpg");
+        list.add("https://wx1.sinaimg.cn/mw690/7325792bly1fx9oma87k1j21900u04jf.jpg");
+        list.add("https://wx3.sinaimg.cn/mw690/7325792bly1fx9oma3jhpj21900u04h0.jpg");
+        list.add("https://wx4.sinaimg.cn/mw690/006l0mbogy1fi68ud4uwwj30u00zrtdj.jpg");
+        list.add("https://wx1.sinaimg.cn/mw690/006DQg3tly1fuvkrxsntcg30g409xx6q.gif");
+        list.add("https://wx1.sinaimg.cn/mw690/006DQg3tly1fuvks859e4g30dw0atqv8.gif");
         return list;
     }
 }

@@ -17,9 +17,6 @@ public class PhotoBrowseManager {
         ArrayList<String> list = new ArrayList<>();
         list.add(FrescoImageLoader.getResUrl(R.drawable.resx));//长图
         list.add(FrescoImageLoader.getAssetUrl("test.jpeg"));
-        //如果加载本地图片，可按照下面的来
-//        list.add(FrescoImageLoader.getFileUrl("/storage/emulated/0/Pictures/Screenshots/Screenshot_20170919-203120.png"));
-//        list.add(FrescoImageLoader.getFileUrl("/storage/emulated/0/tencent/MicroMsg/WeiXin/mmexport1505817817979.jpg"));
         //网络长图,包括横向和纵向的长图
         list.add("https://wx2.sinaimg.cn/mw690/005MctNqgy1fx674gpkbvj30gf4k2wzp.jpg");
         list.add("https://wx1.sinaimg.cn/mw690/0062Xesrgy1fx8uu5p4stj30j66d6b29.jpg");
