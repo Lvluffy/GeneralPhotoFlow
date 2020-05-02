@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">图片浏览</string>
+
+    <string name="cancel">取消</string>
+    <string name="settings">设置</string>
+
+    <string name="save_big_image">保存图片</string>
+    <string name="saved_faild">保存失败</string>
+    <string name="save_image_aready">已保存->图库查看,图片地址: \n %s</string>
+
+    <!-- android 6.0权限-->
+    <string name="permission_tip_SD">本App需要使用(存储)权限，您是否同意?点击"设置"去开启此权限\n您可在“设置”>“应用”>“权限”中配置权限</string>
+
+</resources>

@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.luffy.generalphotoflow.manager.PhotoBrowseManager;
 import com.luffy.generalphotoflow.manager.PhotoPreviewManager;
-import com.luffy.generalphotoflowlib.photoBrowse.controller.PhotoBrowseConfig;
-import com.luffy.generalphotoflowlib.photoPreview.controller.PhotoPreviewConfig;
+import com.luffy.photo.photobrowse.controller.PhotoBrowseConfig;
+import com.luffy.photo.photopreview.controller.PhotoPreviewConfig;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

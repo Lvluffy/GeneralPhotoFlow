@@ -1,11 +1,12 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.Lvluffy'
 
 android {
     compileSdkVersion rootProject.android.compileSdkVersion
     buildToolsVersion rootProject.android.buildToolsVersion
     /**默认-选项配置*/
     defaultConfig {
-        applicationId rootProject.android.applicationId
         minSdkVersion rootProject.android.minSdkVersion
         targetSdkVersion rootProject.android.targetSdkVersion
         versionCode rootProject.android.versionCode
@@ -21,7 +22,7 @@ android {
         }
         release {
             //混淆
-            minifyEnabled true
+            minifyEnabled false
             //混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -31,24 +32,19 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
-    /**编译选项*/
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    /**自定义aar的名字*/
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = outputFileName.replace(".aar", "-") + rootProject.android.versionCode + ".aar"
+        }
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     /**support*/
-    implementation rootProject.supportDepends.values()
-    /**仓库*/
-    /*butterknife*/
-    implementation 'com.jakewharton:butterknife:9.0.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
-    /**generalphotoflowlib*/
-    /**第三方*/
-    implementation 'com.github.bumptech.glide:glide:4.8.0'
-    implementation project(path: ':photobrowselib')
-    implementation project(path: ':photopreviewlib')
+    compileOnly rootProject.supportDepends.values()
+    /** 第三方库*/
+    /*glide(图片加载库)*/
+    compileOnly 'com.github.bumptech.glide:glide:4.5.0'
 }

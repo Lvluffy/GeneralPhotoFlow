@@ -2,7 +2,8 @@ package com.luffy.generalphotoflow.base;
 
 import android.app.Application;
 
-import com.luffy.generalphotoflowlib.photoBrowse.FrescoImageLoader;
+import com.luffy.photo.photobrowse.FrescoImageLoader;
+
 
 public class BaseApplication extends Application {
 

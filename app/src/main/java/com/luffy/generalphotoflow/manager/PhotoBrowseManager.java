@@ -1,7 +1,7 @@
 package com.luffy.generalphotoflow.manager;
 
 import com.luffy.generalphotoflow.R;
-import com.luffy.generalphotoflowlib.photoBrowse.FrescoImageLoader;
+import com.luffy.photo.photobrowse.FrescoImageLoader;
 
 import java.util.ArrayList;
 

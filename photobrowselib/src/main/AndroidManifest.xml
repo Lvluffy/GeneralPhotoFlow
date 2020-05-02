@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.luffy.photo.photobrowse">
+
+    <!--权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!--界面-->
+    <application>
+        <!--图片浏览-->
+        <activity
+            android:name=".ui.PhotoPagerActivity"
+            android:theme="@style/PhoAppTheme.Transparent" />
+    </application>
+
+</manifest>
+
+
